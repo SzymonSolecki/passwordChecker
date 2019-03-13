@@ -48,5 +48,5 @@ try:
         print('{} not found'.format(pass_to_check))
 except IndexError:
     print("Give at least one argument!")
-else:
-    print("Whoops, something went wrong!")
+except Exception as e:
+    print(e)

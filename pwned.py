@@ -3,11 +3,12 @@
 import hashlib
 import urllib.request
 import sys
+import getpass
 
 sha = hashlib.sha1()
 
 try:
-    pass_to_check = sys.argv[1]
+    pass_to_check = input("Type a password: ")
 
     sha.update(pass_to_check.encode('utf-8'))
 
@@ -16,7 +17,7 @@ try:
     hashed_end = hashed_text[5:]
 
     # api requires 5 first chars of hash
-    url = "https://api.pwnedpasswords.com/range/" + hashed_beg + '/'
+    url = "https://api.pwnedpasswords.com/range/" + hashed_beg
     user_agent = 'Pwnage-Checker-For-iOS'
 
     # Url requires to use user agent
